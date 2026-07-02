@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myHotel Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader">
+    <h1>myHotel</h1>
+</div>
+
+<nav>
+    <h2>myHotel</h2>
+
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-right" id="navRight">
+        <input id="search" placeholder="Search meals..." onkeyup="searchMeal()">
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="overlay">
+        <h1>Order Premium Meals Online</h1>
+        <p>Fast delivery. Fresh ingredients. Luxury taste.</p>
+        <button onclick="scrollToMenu()">Order Now</button>
+    </div>
+</header>
+
+<section class="offer">
+    🔥 Friday Offer: Get 20% Off All Pizza Orders
+</section>
+
+<section class="menu" id="menu">
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500">
+        <h3>Pilau Beef</h3>
+        <p>KSh 450</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Pilau Beef',450)">Add</button>
+    </div>
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500">
+        <h3>Pizza</h3>
+        <p>KSh 900</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Pizza',900)">Add</button>
+    </div>
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500">
+        <h3>Burger</h3>
+        <p>KSh 700</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Burger',700)">Add</button>
+    </div>
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500">
+        <h3>Chicken Wings</h3>
+        <p>KSh 800</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Chicken Wings',800)">Add</button>
+    </div>
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=500">
+        <h3>Milkshake</h3>
+        <p>KSh 350</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Milkshake',350)">Add</button>
+    </div>
+
+    <div class="food">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500">
+        <h3>Ice Cream</h3>
+        <p>KSh 300</p>
+        <input type="number" value="1" min="1">
+        <button onclick="add(this,'Ice Cream',300)">Add</button>
+    </div>
+
+</section>
+
+<div class="view-menu-container">
+    <button id="menuToggleBtn" onclick="toggleFullMenu()">View Full Menu</button>
+</div>
+
+<section id="fullMenu" class="full-menu">
+
+<h2>Full Menu</h2>
+
+<h3>BREAKFAST</h3>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500')">
+<span>Pancakes</span>
+<span>KSh 350</span>
+<button onclick="event.stopPropagation(); quickAdd('Pancakes',350)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500')">
+<span>Omelette</span>
+<span>KSh 250</span>
+<button onclick="event.stopPropagation(); quickAdd('Omelette',250)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500')">
+<span>French Toast</span>
+<span>KSh 300</span>
+<button onclick="event.stopPropagation(); quickAdd('French Toast',300)">Order</button>
+</div>
+
+<h3>LUNCH</h3>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500')">
+<span>Chicken Rice</span>
+<span>KSh 600</span>
+<button onclick="event.stopPropagation(); quickAdd('Chicken Rice',600)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1516684732162-798a0062be99?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1516684732162-798a0062be99?w=500')">
+<span>Steak</span>
+<span>KSh 1200</span>
+<button onclick="event.stopPropagation(); quickAdd('Steak',1200)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500')">
+<span>Biryani</span>
+<span>KSh 700</span>
+<button onclick="event.stopPropagation(); quickAdd('Biryani',700)">Order</button>
+</div>
+
+<h3>DINNER</h3>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1550547660-d9450f859349?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1550547660-d9450f859349?w=500')">
+<span>Double Burger</span>
+<span>KSh 950</span>
+<button onclick="event.stopPropagation(); quickAdd('Double Burger',950)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500')">
+<span>BBQ Ribs</span>
+<span>KSh 1400</span>
+<button onclick="event.stopPropagation(); quickAdd('BBQ Ribs',1400)">Order</button>
+</div>
+
+<h3>DRINKS</h3>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500')">
+<span>Mango Juice</span>
+<span>KSh 200</span>
+<button onclick="event.stopPropagation(); quickAdd('Mango Juice',200)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500')">
+<span>Iced Coffee</span>
+<span>KSh 280</span>
+<button onclick="event.stopPropagation(); quickAdd('Iced Coffee',280)">Order</button>
+</div>
+
+<h3>DESSERTS</h3>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500')">
+<span>Chocolate Cake</span>
+<span>KSh 400</span>
+<button onclick="event.stopPropagation(); quickAdd('Chocolate Cake',400)">Order</button>
+</div>
+
+<div class="menu-row" onmouseover="showPreview('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500')" onclick="showPreview('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500')">
+<span>Donuts</span>
+<span>KSh 250</span>
+<button onclick="event.stopPropagation(); quickAdd('Donuts',250)">Order</button>
+</div>
+
+<div class="menu-preview">
+    <img id="previewImage" src="">
+</div>
+
+</section>
+
+<section class="summary">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+
+    <h2>Total: KSh <span id="total">0</span></h2>
+
+    <input id="customerName" placeholder="Your name">
+    <input id="customerPhone" placeholder="Phone number">
+
+    <div class="buttons">
+        <button onclick="sendWhatsapp()">WhatsApp Order</button>
+        <button onclick="sendEmail()">Email Order</button>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+        <div class="review">⭐⭐⭐⭐⭐<p>Best pilau in Nairobi!</p></div>
+        <div class="review">⭐⭐⭐⭐⭐<p>Fast delivery and amazing food.</p></div>
+        <div class="review">⭐⭐⭐⭐⭐<p>Luxury dining at home.</p></div>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <h2>Food Gallery</h2>
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500">
+        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=500">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=500">
+    </div>
+</section>
+
+<section id="faq" class="faq">
+    <h2>FAQs</h2>
+
+    <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">Do you deliver in Nairobi?</h3>
+        <p>Yes, we deliver across Nairobi and nearby towns.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">How long does delivery take?</h3>
+        <p>Usually 30–60 minutes depending on location.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 onclick="toggleFaq(this)">Do you accept cash?</h3>
+        <p>Yes. We accept cash, card and mobile money payments.</p>
+    </div>
+</section>
+
+<footer>
+    <h3>myHotel</h3>
+    <p>📍 Nairobi, Kenya</p>
+    <p>📞 +254 711 906 157</p>
+    <p>✉ orders@myhotel.com</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/254711906157">💬</a>
+
+<script src="script.js"></script>
+</body>
+</html>
