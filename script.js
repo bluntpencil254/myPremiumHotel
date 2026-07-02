@@ -75,7 +75,7 @@ Order:
 ${orderText}
 Total: KSh ${total}`;
 
-    window.open(`https://wa.me/254712345678?text=${encodeURIComponent(message)}`);
+    window.open(`https://wa.me/254711906157?text=${encodeURIComponent(message)}`);
 }
 
 function sendEmail(){
