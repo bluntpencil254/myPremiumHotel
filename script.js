@@ -166,5 +166,5 @@ function toggleFaq(element){
 function toggleDarkMode(){
     document.body.classList.toggle("dark");
 }
-#year update
+
 document.getElementById("year").innerText = new Date().getFullYear();
